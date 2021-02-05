@@ -12,7 +12,7 @@ const Layout = ({children}) => {
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={3}>
+            <Grid container>
                 <Grid item xs={3} />
                 <Grid item container xs={6}>
                     {children}

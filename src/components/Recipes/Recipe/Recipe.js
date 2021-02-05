@@ -8,8 +8,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import img from '../../../assets/images/contemplative-reptile.jpg';
-
 const useStyles = makeStyles({
     root: {
       maxWidth: 345,
@@ -19,7 +17,7 @@ const useStyles = makeStyles({
     },
 });
 
-const Recipe = () => {
+const Recipe = ({recipe}) => {
     const classes = useStyles();
 
     return (
@@ -28,21 +26,24 @@ const Recipe = () => {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image={img}
+                        image={recipe.recipe.image}
                         title="Contemplative Reptile"
                     />
                     <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Lizard
+                        <Typography gutterBottom variant="h5" component="h3">
+                            {recipe.recipe.label.length > 16 ? recipe.recipe.label.substring(0,16) + '...' : recipe.recipe.label}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                            across all continents except Antarctica
+                            {recipe.recipe.dietLabels}, {recipe.recipe.calories} Calories 
                         </Typography>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button size="small" color="primary">
+                    <Button 
+                        size="small" 
+                        color="primary"
+                        href={recipe.recipe.url}
+                        target="_blank">
                         Read More
                     </Button>
                 </CardActions>

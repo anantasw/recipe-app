@@ -7,8 +7,8 @@ const SearchBar = () => {
     return (
         <>
             <Grid item xs={12}>
-                <Box mt={20}>
-                    <Typography variant="h3" gutterBottom mt={20}>
+                <Box mt={10}>
+                    <Typography variant="h3" gutterBottom>
                         Search a recipe...
                     </Typography>
                 </Box>
