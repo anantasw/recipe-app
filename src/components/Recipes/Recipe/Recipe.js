@@ -34,7 +34,7 @@ const Recipe = ({recipe}) => {
                             {recipe.recipe.label.length > 16 ? recipe.recipe.label.substring(0,16) + '...' : recipe.recipe.label}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            {recipe.recipe.dietLabels}, {recipe.recipe.calories} Calories 
+                            {recipe.recipe.dietLabels}, {recipe.recipe.calories.toFixed(0)} Calories 
                         </Typography>
                     </CardContent>
                 </CardActionArea>
